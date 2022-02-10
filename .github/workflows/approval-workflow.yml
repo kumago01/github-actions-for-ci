@@ -1,15 +1,15 @@
 name: Team's approval workflow
 
 on: pull_request_review
-
+name: Label approved pull requests
 jobs:
   labelWhenApproved:
-  name: label when approved
-    runs-on: ubuntu-latest 
+    name: Label when approved
+    runs-on: ubuntu-latest
     steps:
-    - name: label when approved
+    - name: Label when approved
       uses: pullreminders/label-when-approved-action@master
       env:
-        APPROVALS: 1 
-        GITHUBTOKEN: ${{secrets.GITHUB_TOKEN}}
-        ADD_LABEL: approved level 1
+        APPROVALS: "1"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ADD_LABEL: "approved level 1"
